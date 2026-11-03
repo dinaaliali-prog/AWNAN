@@ -1,0 +1,484 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AWNAN عوناً</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one-page company site. Sticky header, a hero that pairs the mark with the promise, then bands that alternate paper / teal / indigo. The gold rising line from the logo is the one recurring motif. */
+:root{
+  --teal:#0F666D; --gold:#B8995E; --gold-ink:#8C6E35; --indigo:#1C2541; --mist:#EEF2EF; --sand:#E7DCC6;
+  --on-brand:#F4F5F2; --on-brand-muted:#C9D6D4; --on-indigo-muted:#B9C3D6; --gold-light:#D9BC82; --teal-light:#5FC3C6;
+  --bg:#F7F8F6; --surface:#FFFFFF; --fg:#1C2541; --muted:#56606D; --line:#DCE3DF; --accent:#0F666D; --accent-soft:#E1EFEF; --highlight:#8C6E35;
+  --f-display:"Readex Pro","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans","IBM Plex Sans Arabic","Segoe UI",Arial,sans-serif;
+  --f-ar:"IBM Plex Sans Arabic","Readex Pro",Tahoma,sans-serif;
+  --logo-light:block; --logo-dark:none;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1620; --surface:#17212D; --fg:#E8EEEC; --muted:#A3AEB8; --line:#283545; --accent:#5FC3C6; --accent-soft:#132E33; --highlight:#D9BC82;
+  --logo-light:none; --logo-dark:block; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1620; --surface:#17212D; --fg:#E8EEEC; --muted:#A3AEB8; --line:#283545; --accent:#5FC3C6; --accent-soft:#132E33; --highlight:#D9BC82;
+  --logo-light:none; --logo-dark:block; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.6}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+p,ul{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+[lang="ar"]{font-family:var(--f-ar);direction:rtl}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-display);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--highlight)}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+.logo-l{display:var(--logo-light)} .logo-d{display:var(--logo-dark)}
+
+/* Header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand img{width:44px;height:auto}
+.brand .bw{display:flex;flex-direction:column;line-height:1}
+.brand .bw b{font-family:var(--f-display);font-weight:600;font-size:20px;letter-spacing:.16em;color:var(--accent)}
+.brand .bw span{font-family:var(--f-ar);font-size:15px;color:var(--accent);margin-top:3px}
+nav.links{display:flex;align-items:center;gap:26px}
+nav.links a{color:var(--fg);text-decoration:none;font-size:15px;font-weight:500}
+nav.links a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:500;font-size:16px;padding:12px 22px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn-primary{background:var(--teal);color:var(--on-brand)}
+.btn-primary:hover{background:var(--indigo)}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+nav.links .btn{padding:9px 18px;font-size:15px;color:var(--on-brand)}
+@media (max-width:860px){nav.links a:not(.btn){display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:72px 64px}
+.hero h1{font-size:clamp(40px,6.2vw,72px);font-weight:600;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .ar-tag{font-family:var(--f-ar);font-size:clamp(22px,2.8vw,30px);color:var(--highlight);margin-top:14px}
+.hero .lead{margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-mark{position:relative;justify-self:center;width:min(380px,100%)}
+.hero-mark img{width:100%;height:auto;position:relative}
+.rise{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.rise path{fill:none;stroke:var(--gold);stroke-width:1.5}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.fact{background:var(--bg);padding:24px 20px;display:flex;flex-direction:column;gap:4px}
+.fact b{font-family:var(--f-display);font-size:clamp(30px,3.4vw,40px);font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.1}
+.fact span{font-size:14.5px;color:var(--muted);line-height:1.45}
+@media (prefers-reduced-motion:no-preference){
+  .rise path{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .3s ease-out forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:48px 40px}
+  .hero-mark{order:-1;width:180px;justify-self:start}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Sections */
+section.band{padding-block:88px}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:44px;max-width:760px}
+.sec-head h2{font-size:clamp(30px,3.8vw,44px)}
+.band.teal{background:var(--teal);color:var(--on-brand)}
+.band.teal .eyebrow{color:var(--gold-light)}
+.band.teal .lead{color:var(--on-brand-muted)}
+.band.indigo{background:var(--indigo);color:var(--on-brand)}
+.band.indigo .eyebrow{color:var(--gold-light)}
+.band.indigo .lead{color:var(--on-indigo-muted)}
+.band.alt{background:var(--surface);border-block:1px solid var(--line)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
+.about-grid .prose{display:flex;flex-direction:column;gap:18px;max-width:62ch}
+.root-card{border:1px solid rgba(244,245,242,.25);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:14px}
+.root-card .letters{font-family:var(--f-ar);font-size:56px;line-height:1.2;color:var(--gold-light);direction:rtl;letter-spacing:.3em}
+.root-card p{color:var(--on-brand-muted);font-size:16px}
+.root-card .ar-line{font-family:var(--f-ar);color:var(--on-brand);font-size:20px;direction:rtl}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(244,245,242,.22)}
+.vm h3{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px}
+.vm p{font-size:18px;line-height:1.55}
+.vm p[lang="ar"]{color:var(--on-brand-muted);font-size:17px;margin-top:12px;line-height:1.8}
+@media (max-width:860px){.about-grid,.vm{grid-template-columns:1fr;gap:32px}}
+
+/* Services */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tab{font-family:var(--f-display);font-size:15px;font-weight:500;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--on-brand)}
+.tab:hover:not([aria-selected="true"]){border-color:var(--accent);color:var(--accent)}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:40px}
+.panel h3{font-size:30px}
+.panel .ar{font-family:var(--f-ar);color:var(--accent);font-size:19px;direction:rtl;text-align:left;margin-top:6px}
+.panel .intro{color:var(--muted);margin-top:16px}
+.panel .led{font-size:15px;color:var(--muted);margin-top:16px}
+.panel .led b{color:var(--fg)}
+.record{margin-top:22px;background:var(--accent-soft);border-radius:10px;padding:18px 20px;font-size:15.5px}
+.panel ul.svc{list-style:none;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.panel ul.svc li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;display:flex;gap:12px}
+.panel ul.svc li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:.62em}
+.pkgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.pkg{background:var(--indigo);color:var(--on-brand);border-radius:12px;padding:18px}
+.pkg h4{font-size:16px}
+.pkg p{font-size:14px;color:var(--on-indigo-muted);margin-top:6px;line-height:1.45}
+.pkg-label{font-family:var(--f-display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--highlight);margin-top:26px;font-weight:600}
+@media (max-width:860px){.panel{grid-template-columns:1fr;gap:28px;padding:26px 22px}.pkgs{grid-template-columns:1fr}}
+
+/* AI */
+.ai-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:start}
+.tbl{overflow-x:auto;border-radius:12px;border:1px solid rgba(244,245,242,.18)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:16px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid rgba(244,245,242,.14)}
+th{font-family:var(--f-display);font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light)}
+td{color:var(--on-brand)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:600;border-bottom:0}
+.ai-points{display:flex;flex-direction:column;gap:20px}
+.ai-points div{border-left:2px solid var(--gold);padding-left:18px}
+.ai-points h4{font-size:18px}
+.ai-points p{font-size:15.5px;color:var(--on-indigo-muted);margin-top:4px}
+.tracks{margin-top:36px;color:var(--on-indigo-muted);font-size:16px}
+.tracks b{color:var(--on-brand);font-weight:600}
+@media (max-width:860px){.ai-grid{grid-template-columns:1fr}}
+
+/* Method */
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;counter-reset:s;position:relative}
+.step{padding:22px 18px 0 0;position:relative;border-top:2px solid var(--line)}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:-15px;left:0;font-family:var(--f-display);font-weight:600;font-size:13px;background:var(--bg);color:var(--highlight);padding-right:10px}
+.step h4{font-size:18px;margin-top:6px}
+.step p{font-size:15px;color:var(--muted);margin-top:6px}
+.step.last{border-top-color:var(--gold)}
+.qa{margin-top:40px;font-size:15.5px;color:var(--muted);max-width:70ch}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}}
+@media (max-width:460px){.steps{grid-template-columns:1fr}}
+
+/* Why */
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.why div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.why h3{font-size:19px}
+.why p{font-size:15.5px;color:var(--muted);margin-top:10px}
+.ways{margin-top:28px;font-size:16px;color:var(--muted)}
+.ways b{color:var(--fg)}
+@media (max-width:960px){.why{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.why{grid-template-columns:1fr}}
+
+/* Team */
+.leaders{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.leader{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.leader .role{font-family:var(--f-display);font-weight:500;color:var(--accent);font-size:16px}
+.leader h3{font-size:28px}
+.leader p{color:var(--muted);font-size:16px}
+.leader ul{padding-left:18px;font-size:15px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.assoc-h{font-family:var(--f-display);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--highlight);margin:44px 0 16px}
+.assoc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.assoc div{border-top:2px solid var(--accent);padding-top:16px}
+.assoc h4{font-size:19px}
+.assoc .role{font-size:14.5px;color:var(--accent);font-weight:500;margin-top:4px}
+.assoc p{font-size:15px;color:var(--muted);margin-top:8px}
+.note{font-size:14px;color:var(--muted);margin-top:24px}
+@media (max-width:860px){.leaders,.assoc{grid-template-columns:1fr}}
+
+/* Experience */
+.exp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(244,245,242,.16);border:1px solid rgba(244,245,242,.16);border-radius:14px;overflow:hidden}
+.exp div{background:var(--teal);padding:24px;display:flex;flex-direction:column;gap:6px}
+.exp h4{font-size:17px}
+.exp .who{font-size:13.5px;color:var(--gold-light)}
+.exp p{font-size:14.5px;color:var(--on-brand-muted)}
+.donors{margin-top:30px;font-size:15px;color:var(--on-brand-muted)}
+@media (max-width:960px){.exp{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.exp{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact h2{font-size:clamp(30px,3.8vw,44px)}
+.cards{display:flex;flex-direction:column;gap:12px}
+.cc{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.cc .k{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:var(--f-display)}
+.cc .v{font-size:17px;font-weight:500;user-select:all;overflow-wrap:anywhere}
+.cc > div{min-width:0}
+.copy{flex:none;font-family:var(--f-display);font-size:14px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{background:var(--indigo);color:var(--on-indigo-muted);font-size:14px}
+footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+footer .fb{display:flex;align-items:center;gap:14px}
+footer .fb img{width:44px}
+footer .fb b{font-family:var(--f-display);color:var(--on-brand);letter-spacing:.16em;font-weight:600}
+footer .tag{color:var(--gold-light)}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="AWNAN home">
+      <img class="logo-l" src="awnan-mark.png" alt="">
+      <img class="logo-d" src="awnan-mark-reversed.png" alt="">
+      <span class="bw"><b>AWNAN</b><span lang="ar">عوناً</span></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#ai">AI training</a>
+      <a href="#team">Team</a>
+      <a href="#experience">Experience</a>
+      <a class="btn btn-primary" href="#contact">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Consulting and training · Egypt, Africa and the Middle East</p>
+      <h1 style="margin-top:18px">Support that <em>builds capability</em></h1>
+      <p class="ar-tag" lang="ar">عونٌ يبني القدرات</p>
+      <p class="lead">AWNAN is an Egyptian consultancy for workforce, learning and performance. We work beside employers, training providers, government bodies and donor‑funded programmes, and every assignment ends with a handover so your people can carry the work forward.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact">Talk to us</a>
+        <a class="btn btn-ghost" href="#services">See our services</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <svg class="rise" viewBox="0 0 400 380" aria-hidden="true"><path d="M-20 360 C120 330 200 250 260 170 S360 40 430 -10"/><path d="M-20 390 C140 360 230 280 290 200 S380 80 440 30"/></svg>
+      <img class="logo-l" src="awnan-mark.png" alt="AWNAN logo: the Arabic letter ع inside a teal circle, with a gold arrow rising out of it">
+      <img class="logo-d" src="awnan-mark-reversed.png" alt="AWNAN logo: the Arabic letter ع inside a circle, with a gold arrow rising out of it">
+    </div>
+  </div>
+  <div class="wrap" style="padding-block:0">
+    <div class="facts">
+      <div class="fact"><b>20+</b><span>years of our CEO’s experience in workforce, HR and learning</span></div>
+      <div class="fact"><b>25,000+</b><span>training hours delivered in Arabic and English since 2008</span></div>
+      <div class="fact"><b>40</b><span>companies given new HR systems, turnover down 20% on average</span></div>
+      <div class="fact"><b>91</b><span>professionals trained in practical AI programmes in 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band teal" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:24px">
+          <p class="eyebrow">Who we are</p>
+          <h2>An Egyptian consultancy for workforce, learning and performance</h2>
+        </div>
+        <div class="prose">
+          <p>AWNAN designs and delivers consulting and training for employers, training providers, government bodies and donor‑funded programmes. We work in Arabic and English, in Egypt first and then across Africa and the Middle East.</p>
+          <p>Every assignment is led by a senior expert. Our leadership and associate experts have worked on USAID‑, EU‑ and GIZ‑funded programmes, written national occupational standards, run Lean programmes inside factories, digitised national TVET curricula and built HR systems for 40 companies.</p>
+        </div>
+      </div>
+      <div class="root-card">
+        <p class="letters" lang="ar">ع و ن</p>
+        <p>Our name comes from the Arabic root for help and support. <span lang="ar" style="color:var(--on-brand)">عوناً</span> means “by way of support”: we stand beside our clients and help carry the work.</p>
+        <p class="ar-line" lang="ar">نقف إلى جانب عملائنا ونساعدهم على حمل العمل.</p>
+      </div>
+    </div>
+    <div class="vm">
+      <div>
+        <h3>Vision</h3>
+        <p>A future where every worker, learner and institution in Egypt, Africa and the Middle East has the skills and systems to thrive in a changing economy.</p>
+        <p lang="ar">أن يمتلك كل عامل ومتعلم ومؤسسة في مصر وأفريقيا والشرق الأوسط المهارات والأنظمة التي تمكّنهم من الازدهار في اقتصاد متغيّر.</p>
+      </div>
+      <div>
+        <h3>Mission</h3>
+        <p>We work side by side with governments, employers, training providers and development partners to design and deliver practical solutions, and we transfer our know‑how so that results last after our work ends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our services</p>
+      <h2>Five practice areas, one way of working</h2>
+      <p class="lead">Delivered in‑house, as open courses, online and blended, or as expert support to donor‑funded programmes.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Practice areas" id="tabs"></div>
+    <div id="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="band indigo" id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Practical AI training</p>
+      <h2>Four programmes, 91 professionals trained in 2026</h2>
+      <p class="lead">Designed and delivered by our CEO, Dina Ali. Participants learn to use AI on their own daily work, with no coding needed.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Programme</th><th>Delivered with</th><th>Date</th><th>Length</th><th style="text-align:right">Participants</th></tr></thead>
+          <tbody>
+            <tr><td>AI for Shadow Teaching</td><td>Delivered directly</td><td>Feb 2026</td><td>5 days</td><td class="n">15</td></tr>
+            <tr><td>AI for Customer Service</td><td>Federation of Egyptian Industries</td><td>May 2026</td><td>3 days</td><td class="n">20</td></tr>
+            <tr><td>AI for Business</td><td>Federation of Egyptian Industries</td><td>Aug 2026</td><td>4 days</td><td class="n">28</td></tr>
+            <tr><td>Practical AI for HR</td><td>Federation of Egyptian Industries</td><td>Oct 2026</td><td>3 days</td><td class="n">28</td></tr>
+            <tr class="total"><td>Total</td><td></td><td></td><td>15 days</td><td class="n">91</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ai-points">
+        <div><h4>100% practical</h4><p>Real workplace tasks with ChatGPT, Gemini, Copilot, Perplexity, Canva and Excel AI.</p></div>
+        <div><h4>A one‑week capstone</h4><p>Each participant applies AI to a task from their own job.</p></div>
+        <div><h4>Three months of mentoring</h4><p>Support after the training, so new habits stick.</p></div>
+        <div><h4>People decide</h4><p>AI drafts and people check. Personal data is handled under Egypt’s Law 151/2020.</p></div>
+      </div>
+    </div>
+    <p class="tracks"><b>Tracks available:</b> HR · Business · Customer service · Teachers and shadow teachers · Any sector on request. In Arabic and English, in‑house, open or online.</p>
+  </div>
+</section>
+
+<section class="band" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How we work</p>
+      <h2>Every assignment ends with a handover</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>Listen and diagnose</h4><p>Baseline and gap analysis</p></div>
+      <div class="step"><h4>Co‑design</h4><p>Solution agreed with your team</p></div>
+      <div class="step"><h4>Pilot</h4><p>Tested in one unit, then revised</p></div>
+      <div class="step"><h4>Scale</h4><p>Rollout plan and trained local trainers</p></div>
+      <div class="step"><h4>Hand over</h4><p>Tools, manuals and 3 months of mentoring</p></div>
+      <div class="step last"><h4>Measure</h4><p>Impact report against the baseline</p></div>
+    </div>
+    <p class="qa">A second senior expert reviews every deliverable before it reaches you. Personal data is handled under Egypt’s Personal Data Protection Law (151/2020).</p>
+  </div>
+</section>
+
+<section class="band alt" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why AWNAN</p>
+      <h2>What clients get from working with us</h2>
+    </div>
+    <div class="why">
+      <div><h3>A senior expert on every assignment</h3><p>15–35+ years of experience at a boutique price, with no junior teams sent in our place.</p></div>
+      <div><h3>Systems and shop floor in one team</h3><p>We have written national standards and curricula, and run Lean programmes inside factories.</p></div>
+      <div><h3>Arabic and English by default</h3><p>Materials, training and reports written in both languages, not translated as an afterthought.</p></div>
+      <div><h3>Capability that stays</h3><p>Every programme ends with tools, a handover and mentoring, so your people can carry on.</p></div>
+    </div>
+    <p class="ways"><b>Ways to work with us:</b> in‑house programmes · open courses · online and blended learning · consulting assignments · expert support to donor‑funded programmes</p>
+  </div>
+</section>
+
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our team</p>
+      <h2>Led by its founders, backed by senior associate experts</h2>
+    </div>
+    <div class="leaders">
+      <div class="leader">
+        <span class="role">CEO and co‑founder</span>
+        <h3>Dina Ali</h3>
+        <p>Senior consultant and professional trainer with more than 20 years in workforce development, HR, organisational development, learning and development, and TVET. Designs and delivers practical AI training, and specialises in special education, neurodiversity and inclusive learning.</p>
+        <ul>
+          <li>Led the 3R programme on the USAID‑funded Workforce Egypt project, managing about 20 staff and consultants</li>
+          <li>Built HR systems for 40 companies; turnover down 20% on average within one year</li>
+          <li>Worked on the EU‑funded TVET II programme and the USAID Egypt Competitiveness Program</li>
+          <li>More than 25,000 training hours since 2008</li>
+        </ul>
+      </div>
+      <div class="leader">
+        <span class="role">Co‑founder · Digital and blended learning</span>
+        <h3>Marwa Ahmed Ali</h3>
+        <p>Digitalisation and blended learning specialist with more than 15 years designing and running digital projects for TVET and education in Egypt. MSc in Project Management, Ain Shams University.</p>
+        <ul>
+          <li>Digitisation and Blended Learning Advisor on the USAID‑funded Workforce Egypt project</li>
+          <li>Led the digitalisation of 10 competency‑based programmes for Applied Technology Schools</li>
+          <li>Planned a combined LMS and school management system with the Ministry of Education</li>
+          <li>Former Head of Educational Scientific Content at Nahdet Misr Publishing Group</li>
+        </ul>
+      </div>
+    </div>
+    <p class="assoc-h">Senior associate experts</p>
+    <div class="assoc">
+      <div><h4>Dr. Essam Ahmed</h4><p class="role">Workforce and TVET</p><p>PhD, MBA and post‑doctoral research at Purdue University. Team leader of TVET‑Egypt and lead expert in national occupational standards. GIZ capacity‑building consultant.</p></div>
+      <div><h4>Ehab Haggag</h4><p class="role">Productivity and quality</p><p>Productivity Advisor on USAID‑funded WISE, running Lean and quality programmes in five sectors. M&amp;E and EU procurement on TVET II.</p></div>
+      <div><h4>Prof. Dr. Abeer Adel</h4><p class="role">Technical studies</p><p>Professor at Egypt’s National Research Centre, patent holder and principal investigator on Egypt–Italy and STDF‑funded research projects.</p></div>
+    </div>
+    <p class="note">Associates are contracted per assignment. More specialists are available on request.</p>
+  </div>
+</section>
+
+<section class="band teal" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Selected experience</p>
+      <h2>Work our team has delivered</h2>
+      <p class="lead">Assignments carried out by AWNAN’s leadership and associate experts with the implementing organisations, before and since AWNAN was founded.</p>
+    </div>
+    <div class="exp">
+      <div><h4>Workforce Egypt, 3R programme</h4><span class="who">USAID‑funded · Dina Ali</span><p>Led the programme with about 20 staff and consultants</p></div>
+      <div><h4>HR systems for 40 companies</h4><span class="who">Private sector · Dina Ali</span><p>Staff turnover down 20% on average within one year</p></div>
+      <div><h4>TVET‑Egypt reform</h4><span class="who">Team leader · Dr. Essam Ahmed</span><p>1,000 trainers, 50 in‑company training centres, 28 training packages</p></div>
+      <div><h4>WISE productivity programme</h4><span class="who">USAID‑funded · Ehab Haggag</span><p>Lean and quality in garments, textiles, food, woodwork and tourism</p></div>
+      <div><h4>TVET II reform programme</h4><span class="who">EU‑funded · Ehab Haggag, Dina Ali</span><p>Monitoring, evaluation and procurement to EU rules</p></div>
+      <div><h4>Applied Technology Schools</h4><span class="who">Workforce Egypt · Marwa Ahmed Ali</span><p>10 programmes digitised; LMS and school management system</p></div>
+      <div><h4>Employment Promotion Project III</h4><span class="who">GIZ · Dr. Essam Ahmed</span><p>Labour market information for youth target groups</p></div>
+      <div><h4>Practical AI programmes</h4><span class="who">Federation of Egyptian Industries · Dina Ali</span><p>4 programmes and 91 participants in 2026</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap contact">
+    <div class="sec-head" style="margin-bottom:0">
+      <p class="eyebrow">Let’s work together</p>
+      <h2>Tell us what your people need to do better</h2>
+      <p class="lead">Send us a short note about your organisation and the challenge you are facing. We reply within two working days, in Arabic or English.</p>
+      <p class="ar-tag" lang="ar" style="font-family:var(--f-ar);font-size:24px;color:var(--highlight);margin-top:8px">عونٌ يبني القدرات</p>
+    </div>
+    <div class="cards">
+      <div class="cc"><div><p class="k">Email</p><p class="v" id="c-email">dinaaliali@gmail.com</p></div><button class="copy" type="button" data-copy="c-email">Copy</button></div>
+      <div class="cc"><div><p class="k">Phone and WhatsApp</p><p class="v" id="c-phone">+20 120 275 0225</p></div><button class="copy" type="button" data-copy="c-phone">Copy</button></div>
+      <div class="cc"><div><p class="k">Address</p><p class="v" id="c-addr">53 Capital Mall, Fifth Settlement, New Cairo, Egypt</p></div><button class="copy" type="button" data-copy="c-addr">Copy</button></div>
+      <div class="cc"><div><p class="k">Contact</p><p class="v">Dina Ali, CEO and co‑founder</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fb"><img src="awnan-mark-reversed.png" alt=""><div><b>AWNAN</b> <span lang="ar">عوناً</span><br><span class="tag">Support that builds capability</span></div></div>
+    <p>Awnan for Development Skills and Smart Solutions LLC · Commercial Register 264619 · Tax Registration 775‑256‑102 · © 2026</p>
+  </div>
+</footer>
+
+<script>
+const AREAS=[
+ {id:"hr",name:"HR & Organizational Development",ar:"الموارد البشرية والتطوير المؤسسي",intro:"We build the HR systems and people practices that help organisations hire well, keep their people and grow their capability.",led:"Dina Ali, with associate Dr. Essam Ahmed",record:"HR systems for 40 companies, built with five HR experts, with staff turnover down 20% on average within one year.",svc:["HR audits and HR health checks","Organisation structures, job descriptions and grading","Performance management and competency frameworks","HR policies and contracts in line with Egypt’s Labour Law","Retention diagnostics and turnover reduction","Training needs analysis, L&D strategy and training of trainers","Corporate academies and part-time HR director support"],pk:[["HR Systems Build","HR audit, then core HR systems in 3–4 months"],["Retention Diagnostic","Turnover analysis and a 90-day retention plan"]]},
+ {id:"tvet",name:"Workforce & TVET Systems",ar:"منظومات القوى العاملة والتعليم الفني",intro:"We help governments, training providers and employers build skills systems that match what the labour market needs.",led:"Dina Ali, with associates Dr. Essam Ahmed and Ehab Haggag",record:"1,000 trainers trained, 50 in-company training centres and 28 training packages under the TVET-Egypt reform. M&E and procurement on the EU-funded TVET II programme.",svc:["National occupational standards and competency-based curricula","Dual system and work-based learning","Upgrading vocational training centres and Centres of Competence","Labour market information and training needs studies","Employability and job-placement programmes","Monitoring and evaluation, including EU PRAG compliance","Key and non-key experts for donor-funded programmes"],pk:[["Training Package Development","Competency-based packages with assessment tools"],["Expert support to programmes","Senior experts for EU, GIZ, KfW and AHK projects"]]},
+ {id:"prod",name:"Productivity, Quality & Industry",ar:"الإنتاجية والجودة والصناعة",intro:"We work on the factory floor with managers and supervisors to cut waste, raise quality and build continuous improvement.",led:"associates Ehab Haggag and Dr. Essam Ahmed",record:"Productivity improvement programmes in five sectors (garments, textiles, food processing, woodwork and tourism) on the USAID-funded WISE project.",svc:["Productivity and Lean diagnostics","Lean and Toyota Production System tools","Quality management systems (ISO 9001, ISO 29990)","Problem solving and continuous improvement","Frontline supervisor development","Occupational health and safety awareness","Training and coaching for staff affected by change"],pk:[["Productivity Diagnostic","30-day Lean and quality assessment with a costed plan"],["Supervisor Upskilling","Competency-based programme with on-the-job coaching"]]},
+ {id:"digital",name:"Digital & AI-Enabled Learning",ar:"التعلّم الرقمي والذكاء الاصطناعي",intro:"We help organisations learn faster with practical AI skills for everyday work, blended learning and digital platforms.",led:"Dina Ali (AI training) and Marwa Ahmed Ali (digital and blended learning)",record:"Four practical AI programmes in 2026 for 91 professionals. Ten competency-based TVET programmes digitised, plus an LMS and school management system for Applied Technology Schools.",svc:["Practical AI training for HR, business, customer service and teachers","AI adoption plans and workplace pilots","Blended learning strategy and design","Curriculum digitalisation and e-learning content","Learning and school management system set-up","Corporate and sector academy design"],pk:[["Practical AI for Work","3–5 days, a workplace capstone and 3 months of mentoring"],["Academy in a Box","Competency framework, curriculum map, LMS and ToT"]]},
+ {id:"incl",name:"Inclusive & Special Education",ar:"التعليم الدامج والتربية الخاصة",intro:"We train teachers, shadow teachers and managers to include every learner, including neurodivergent learners.",led:"Dina Ali",record:"AI for Shadow Teaching, a 5-day programme delivered in February 2026 to 15 participants. Specialist training in ABA, Vineland-3 assessment and neurodiversity coaching.",svc:["Shadow-teacher training, in Arabic","Inclusive classroom practice for teachers","AI tools for shadow teaching and lesson support","Neurodiversity awareness for schools and workplaces","Inclusive learning design and accessible materials"],pk:[["Inclusive School Programme","In-school training for teachers and shadow teachers"],["AI for Shadow Teaching","5-day practical programme with mentoring"]]}
+];
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+function show(i){
+  const a=AREAS[i];
+  [...tabs.children].forEach((t,j)=>{t.setAttribute("aria-selected",j===i?"true":"false");t.tabIndex=j===i?0:-1});
+  panel.innerHTML=`<div class="panel"><div><h3>${esc(a.name)}</h3><p class="ar" lang="ar">${a.ar}</p><p class="intro">${esc(a.intro)}</p><p class="led"><b>Led by</b> ${esc(a.led)}</p><div class="record"><b>Track record:</b> ${esc(a.record)}</div></div><div><ul class="svc">${a.svc.map(s=>`<li>${esc(s)}</li>`).join("")}</ul><p class="pkg-label">Flagship packages</p><div class="pkgs">${a.pk.map(p=>`<div class="pkg"><h4>${esc(p[0])}</h4><p>${esc(p[1])}</p></div>`).join("")}</div></div></div>`;
+}
+AREAS.forEach((a,i)=>{const b=document.createElement("button");b.className="tab";b.type="button";b.id="tab-"+a.id;b.setAttribute("role","tab");b.textContent=a.name;b.onclick=()=>show(i);
+  b.onkeydown=e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const n=(i+(e.key==="ArrowRight"?1:AREAS.length-1))%AREAS.length;show(n);tabs.children[n].focus()}};tabs.appendChild(b)});
+show(0);
+document.querySelectorAll(".copy").forEach(btn=>btn.addEventListener("click",()=>{
+  const el=document.getElementById(btn.dataset.copy),txt=el.textContent;
+  const done=()=>{btn.textContent="Copied";setTimeout(()=>btn.textContent="Copy",1600)};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Selected";setTimeout(()=>btn.textContent="Copy",1600)};
+  try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+}));
+</script>
+
+</body></html>
